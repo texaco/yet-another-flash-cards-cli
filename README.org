@@ -1,0 +1,14 @@
+* Yet another flash cards CLI.
+
+** Description.
+
+=Yet another flash cards CLI= is a command line interface to manage
+your flash cards.
+
+** Licence.
+
+=Yet another flash cards CLI= is under GPL v3 licence.
+
+** Contribute.
+
+Contributions are welcomed.
