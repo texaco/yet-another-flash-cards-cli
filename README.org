@@ -12,3 +12,6 @@ your flash cards.
 ** Contribute.
 
 Contributions are welcomed.
+
+To contribute, fork the repository and make a branch with your user
+name and then do all the changes that you consider, finally do PR.
