@@ -2,6 +2,7 @@
 *.d
 
 # Object files
+bin/
 *.o
 *.ko
 *.obj
@@ -17,6 +18,7 @@
 *.pch
 
 # Libraries
+/googletest/
 *.lib
 *.a
 *.la
@@ -54,4 +56,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-
