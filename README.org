@@ -5,6 +5,64 @@
 =Yet another flash cards CLI= is a command line interface to manage
 your flash cards.
 
+** Add tests.
+
+We are using =google test= suit for unit testing.
+
+You will need to setup your project running =setup= Makefile
+goal.
+
+#+begin_src bash
+  make setup
+#+end_src
+
+This will clone =googletest= project. Keep in mind that you just need
+to run this goal once unless you want to update =googletest= sources.
+
+To add a new test create a =*.tests.cc= fine under =tests= folder.
+
+You need to include in this test the code to test header and also =google
+tests= header. For example:
+
+#+begin_src C++
+  #include "gtest/gtest.h"
+  #include "cards_model.h"
+#+end_src
+
+Check [[https://github.com/google/googletest][=google test=]] for more information.
+
+In order to run all tests just run Makefile =test= goal.
+
+#+begin_src bash :results output
+  make test
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Running main() from googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CardModelTest
+[ RUN      ] CardModelTest.TypeDefTest
+[       OK ] CardModelTest.TypeDefTest (0 ms)
+[----------] 1 test from CardModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+#+end_example
+
+This will create an executable for each tests to run under =bin/tests=
+folder and execute it.
+
+This works as long as your tests don't need a custom =main()=
+function.
+
+If a tests needs a custom =main()= function needs to be liked with
+=gtest.a= instead of =gtest_main.a= as it is now.  You can find more
+information on =Makefile= comments and also on =google test=
+documentation page.
+
 ** Licence.
 
 =Yet another flash cards CLI= is under GPL v3 licence.
