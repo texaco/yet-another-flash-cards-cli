@@ -91,7 +91,7 @@ all : $(OBJECT_LIB_FILES) $(OBJECT_FILES)
 	mkdir -p bin/include
 	$(CC) -o $(MAIN) $?
 
-$(BIN)%.o : $(SRC)%.c
+$(BIN)%.o : $(SRC)%.c $(SRC)%.h
 	@echo "compiling files... $@"
 	$(CC) $(FLAGS) -c $< -o $@
 
