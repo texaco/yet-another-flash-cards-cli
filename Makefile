@@ -98,7 +98,7 @@ $(BIN)%.o : $(SRC)%.c $(SRC)%.h
 # House-keeping build targets.
 
 test : $(TESTS)
-	@$(TESTS)
+	$(foreach test,$(TESTS),$(test);)
 
 # Builds gtest.a and gtest_main.a.
 
