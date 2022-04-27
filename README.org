@@ -5,6 +5,34 @@
 =Yet another flash cards CLI= is a command line interface to manage
 your flash cards.
 
+At this point =YAFC-CLI= is not usable but it is on it progress to
+build core entities so them can be used to implement features.
+
+** Card model.
+
+A card will have the following fields:
+
+- ID.
+- Name.
+- Content.
+
+** Cards Collection.
+
+Just a bunch of cards.  Those cards are linked by =next= field.  As
+collection is initialized creates a node with =ID = 0= and =next=
+field pointing to =NULL=.
+
+Added nodes will be inserted by the top of the collection.  So to know
+you are at the bottom of the collection =next= pointer points towards =NULL=.
+
+** Cards manager.
+
+Cards manager allows to perform the following features.
+
+- Add cards.
+- Get by ID.
+- Remove cards.
+
 ** Add tests.
 
 We are using =google test= suit for unit testing.
