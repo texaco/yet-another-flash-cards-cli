@@ -1,9 +1,11 @@
 #include "card_manager.h"
 
 #include <stdlib.h>
+#include <string.h>
 #include "card_model.h"
 #include "card_collection.h"
 
+#if 0
 Card addNewCard(CardCollection** collection, unsigned int id, char* name, char* content){
   CardCollection* newNode = createCardCollection();
   (*newNode).data.id = id;
@@ -13,6 +15,28 @@ Card addNewCard(CardCollection** collection, unsigned int id, char* name, char* 
   *collection = newNode;
 
   return (*newNode).data;
+}
+#endif
+
+/* In this method I've used the linked list structure to add a new Card at the end of the */
+/* collection using the next pointer while it is not NULL */
+
+Card addNewCard(CardCollection* collection, Card new_card){
+	/* avanzamos hasta el final (donde esta el NULL) */
+	if (collection->next != NULL){
+		void* ptr;
+		ptr = collection->next;
+		while(ptr->next != NULL)
+			ptr = ptr->next;
+
+		ptr->next = (void*)malloc(sizeof(new_card));
+		*((Card*)(collection->next)) = new_card;
+	}else{
+		/* in this case, the register is empty, then we are going to insert it in the */
+		collection->next = (void*)malloc(sizeof(new_card));
+		*((Card*)(collection->next)) = new_card;
+	}
+	return new_card;
 }
 
 /* Search for a given node by ID. If it find the node it will return a

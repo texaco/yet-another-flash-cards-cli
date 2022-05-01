@@ -5,8 +5,8 @@
 
 /* comment */
 typedef struct CardCollectionModel {
-  Card data;
-  void* next;
+	Card data;
+	void* next;
 } CardCollection;
 
 /* Creates a card collection */
